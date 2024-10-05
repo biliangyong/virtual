@@ -101,32 +101,32 @@ function navigationClick(index) {
     let type = { typeDatas: [] };//类型数据
     if (index === 0) {
         //楼宇
-        viewId = "3034";
+        viewId = "3056";
         type.typeDatas = ["1186"];
     }
     else if (index === 1) {
         //道路
-        viewId = "3035";
+        viewId = "3057";
         type.typeDatas = ["1187"];
     }
     else if (index === 2) {
         //景观
-        viewId = "2308";
+        viewId = "3058";
         type.typeDatas = ["1188"];
     }
     else if (index === 3) {
         //文化景点
-        viewId = "2309";
+        viewId = "3059";
         type.typeDatas = ["1189"];
     }
     else if (index === 4) {
         //寝室楼
-        viewId = "2310";
+        viewId = "3060";
         type.typeDatas = [];
     }
     else if (index === 5) {
         //校园餐厅
-        viewId = "2311";
+        viewId = "3061";
         type.typeDatas = [];
     }
 
