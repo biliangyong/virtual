@@ -44,7 +44,6 @@
         <!-- 卡通人物 -->
         <CartoonCom @sceneAnmClick="sceneAnmClick" />
 
-        <div class="quit-style">退出</div>
         <!--<div class="quit-style">退出</div>-->
     </div>
 </template>
