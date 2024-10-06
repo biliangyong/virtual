@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, defineProps, defineEmits } from "vue";
+import { onMounted, onUnmounted, defineProps, defineEmits, mapDom } from "vue";
 defineProps({
     styleId: {
         type: Number,
@@ -28,6 +28,8 @@ onUnmounted(() => {
 })
 function closeBtnClick(){
     emits("closeBtnClick");
+    mapDom.value.callAction("switchSceneView", "3056");//点击关闭键返回
+    mapDom.value.callAction("toggleTypePointVisibility", JSON.stringify(["1200"]));
 }
 </script>
 <style lang="scss">
