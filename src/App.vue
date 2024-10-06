@@ -132,8 +132,8 @@ provide("PageJump", (url, outWeb = false) => {
 
 // 16 ： 9
 .appBody {
-  width: 177.78vh;
-  height: 100vh;
+  width: 1920px;
+  height: 1080px;
   position: fixed;
   left: 50%;
   top: 50%;
