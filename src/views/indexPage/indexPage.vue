@@ -85,9 +85,7 @@ onMounted(() => {
     bus.on('pointClickComplete', (pointData) => {
         console.log("点位数据",pointData);
         clearData();//清除旧数据
-        setTimeout(() => {
-            RequestScenicIdFun(pointData.index_code);
-        }, 2500);
+        RequestScenicIdFun(pointData.index_code);
     })
 });
 
