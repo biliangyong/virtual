@@ -163,13 +163,16 @@ const handleAudioVolume = (val) => {
 	.audio_time {
 		color: #B7BBBE;
 		overflow: hidden;
-		font-size: 12px;
+		font-family: 'NotoSansHans-Regular';
+		font-size: 14px;
 		display: flex;
 		justify-content: space-between;
-		margin-top: 1.4vh;
+		margin-top: 10px;
+		margin-bottom: 6px;
+		line-height: 14px;
 
 		.audio_time_tip {
-			font-size: 1.5vh;
+			font-size: 16px;
 			color: #1F4470;
 		}
 	}
