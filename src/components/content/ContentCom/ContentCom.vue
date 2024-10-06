@@ -32,15 +32,21 @@ function closeBtnClick(){
 </script>
 <style lang="scss">
 .content-com-size0 {
-    height: 58vh;
-    width: 98.4vh;
+    position: absolute;
+    height: 627px;
+    width: 1063px;
+    top: 260px;
+    left: 450px;
     background-image: url("./images/content-bg0.png");
 }
 
 .content-com-size1,
 .content-com-size2 {
-    height: 29.6vh;
-    width: 59.2vh;
+    position: absolute;
+    height: 320px;
+    width: 640px;
+    top: 305px;
+    left: 640px;
 }
 
 .content-com-size3 {
@@ -60,19 +66,17 @@ function closeBtnClick(){
 .content-com {
     background-size: 100% 100%;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
     display: flex;
     flex-direction: column;
     align-items: center;
 
     .close-btn {
-        width: 3.7vh;
-        height: 3.7vh;
+        width: 40px;
+        height: 40px;
         position: absolute;
-        top: 1.5vh;
-        right: 1.5vh;
+        top: 16px;
+        right: 16px;
         cursor: pointer;
     }
 }
