@@ -140,7 +140,7 @@ const handleAudioVolume = (val) => {
 <style lang="scss" scoped>
 .audio_right {
 	width: 100%;
-	height: 5.9vh;
+	height: 64px;
 	display: flex;
 	align-items: center;
 	background: #fff;
@@ -154,14 +154,14 @@ const handleAudioVolume = (val) => {
 	}
 
 	.audio_icon {
-		width: 3.2vh;
-		height: 3.2vh;
+		width: 35px;
+		height: 35px;
 		cursor: pointer;
 		margin-left: 2vh;
 	}
 
 	.audio_time {
-		color: #B7BBBE;
+		color: #E6E7E8;
 		overflow: hidden;
 		font-family: 'NotoSansHans-Regular';
 		font-size: 14px;
@@ -169,10 +169,13 @@ const handleAudioVolume = (val) => {
 		justify-content: space-between;
 		margin-top: 10px;
 		margin-bottom: 6px;
-		line-height: 14px;
+		line-height: 16px;
+		align-items: center;
 
 		.audio_time_tip {
+			font-family: 'NotoSansHans-Regular';
 			font-size: 16px;
+			line-height: 16px;
 			color: #1F4470;
 		}
 	}
