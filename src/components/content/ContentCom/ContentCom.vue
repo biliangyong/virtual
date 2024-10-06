@@ -14,7 +14,9 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, defineProps, defineEmits, mapDom } from "vue";
+import { onMounted, onUnmounted, defineProps, defineEmits,inject } from "vue";
+import { globalState } from '../../../../gloablState';
+let mapdom=inject("mapDom");
 defineProps({
     styleId: {
         type: Number,
@@ -28,8 +30,8 @@ onUnmounted(() => {
 })
 function closeBtnClick(){
     emits("closeBtnClick");
-    mapDom.value.callAction("switchSceneView", "3056");//点击关闭键返回
-    mapDom.value.callAction("toggleTypePointVisibility", JSON.stringify(["1200"]));
+    mapdom.value.callAction("switchSceneView", globalState.globalIndex);//点击关闭键返回globalIndex中存储的是视角到达前的视角id
+
 }
 </script>
 <style lang="scss">
