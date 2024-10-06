@@ -8,8 +8,8 @@
 -->
 <template>
 	<div class="swiper-com">
-		<img class="operate-btn" style="left: 0; transform: translate(-150%, -50%)" src="./images/left-icon.png" @click="swiper?.slidePrev()" alt="" />
-		<img class="operate-btn" style="right: 0; transform: translate(150%, -50%)" src="./images/right-icon.png" @click="swiper?.slideNext()" alt="" />
+		<img class="operate-btn" style="left: -26px; transform: translate(-100%, -50%)" src="./images/left-icon.png" @click="swiper?.slidePrev()" alt="" />
+		<img class="operate-btn" style="right: -26px; transform: translate(100%, -50%)" src="./images/right-icon.png" @click="swiper?.slideNext()" alt="" />
 		<div class="swiper-com-tip">
             <img src="./images/tip-icon.png" alt="" />
             触屏左右滑动切换
@@ -94,16 +94,17 @@
 </script>
 <style lang="scss" scoped>
 	.swiper-com {
-		width: 74%;
-		height: 33.3vh;
+		width: 786px;
+		height: 360px;
 		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+		top: 134px;
+		left: 139px;
 
 		.operate-btn {
+			width: 60px;
+			height: 60px;
 			position: absolute;
-			top: 50%;
+			top: 50%;	
 			cursor: pointer;
 		}
 
@@ -153,22 +154,23 @@
 		}
 
 		.swiper-com-tip {
-			font-size: 1.9vh;
+			font-family: 'NotoSansHans-Regular';
+			font-size: 20px;
 			color: #3f648a;
 			text-align: center;
 			position: absolute;
-			bottom: -5vh;
+			bottom: -87px;
             left: 50%;
-            transform: translate(-50%,100%);
+            transform: translate(-50%,0);
             display: flex;
             align-items: center;
             justify-content: center;
 
 			img {
-				width: 1.6vh;
-				height: 2.1vh;
-                margin-right: 1vh;
-                transform: translateY(-20%);
+				width: 17px;
+				height: 23px;
+                margin-right: 10px;
+                //transform: translateY(-20%);
 			}
 		}
 	}
