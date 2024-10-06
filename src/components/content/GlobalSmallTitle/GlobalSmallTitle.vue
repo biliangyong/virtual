@@ -21,8 +21,10 @@ onUnmounted(() => {
 <style lang="scss">
 .global-small-title {
     font-weight: bold;
-    font-size: 1.6vh;
+    font-size: 20px;
+    font-family: 'NotoSansHans-Regular';
     color: #1f4470;
+    line-height: 20px;
 
     img {
         width: 1.4vh;
