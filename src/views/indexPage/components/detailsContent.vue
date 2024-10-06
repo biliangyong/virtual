@@ -1,7 +1,7 @@
 <template>
     <div class="details-content" v-if="data">
         <NormalSwiperCom :data="data.path" />
-        <AudioPlayer :audioUrl="data.audio_url" style="margin:1.4vh 0;" />
+        <AudioPlayer :audioUrl="data.audio_url" style="margin:16px 0;" />
         <img class="school-icon" src="../images/school-icon.png" alt="" />
         <img class="panorama-icon" src="../images/panorama-icon.png" alt="" @click="PageJump(data.panoramic)"
             v-if="data.panoramic" />
