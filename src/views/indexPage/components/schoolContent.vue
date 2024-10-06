@@ -12,7 +12,7 @@
             <details-content :data="data" />
         </div>
         <div class="content-left">
-            <GlobalSmallTitle style="margin-bottom:1vh;" title="简介" />
+            <GlobalSmallTitle style="margin-bottom:14px;" title="简介" />
             <div class="content-html" v-html="data.info">
             </div>
         </div>
@@ -37,14 +37,15 @@ onUnmounted(() => {
 .school-content {
     width: 100%;
     flex: 1;
-    padding: 2vh;
+    padding: 30px;
+    padding-top: 24px;
     box-sizing: border-box;
     position: relative;
     display: flex;
     overflow: hidden;
 
     .content-right {
-        margin-right: 3.1vh;
+        margin-right: 30px;
     }
 
     .content-left {
@@ -58,10 +59,11 @@ onUnmounted(() => {
             overflow: hidden;
             overflow-y: scroll;
             font-weight: normal;
-            font-family: none;
-            font-size: 1.5vh;
+            font-family: 'NotoSansHans-Regular';
+            font-size: 16px;
             color: #1F4470;
-            line-height: 2.6vh;
+            line-height: 28px;
+            letter-spacing: 2px;
         }
     }
 
