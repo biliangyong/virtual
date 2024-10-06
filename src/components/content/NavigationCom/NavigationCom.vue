@@ -10,7 +10,7 @@
     <div class="navigation-com">
         <div :class="['navigation-child', { 'navigation-child-sel': navIndex == index }]"
             v-for="(item, index) in navData" :key="index" @click="navigationClick(index)">
-            <img :src="require(`./images/nav-icon${index}.png`)" alt="">
+            <img :src="require(`./images/nav-icon${index}${navIndex === index ? 's' : ''}.png`)" alt="">
             {{ item }}
         </div>
     </div>
@@ -32,39 +32,42 @@ function navigationClick(index) {
 </script>
 <style lang="scss">
 .navigation-com {
-    width: 20.4vh;
-    height: 57.4vh;
+    width: 210px;
+    height: 620px;
     padding: 4vh 0;
     box-sizing: border-box;
     background-image: url("./images/navigation-bg.png");
     background-size: 100% 100%;
-    position: fixed;
-    top: 50%;
-    left: 4vh;
-    transform: translateY(-50%);
+    position: absolute;
+    top: 211px;
+    left: 44px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     .navigation-child {
-        height: 5.6vh;
+        height: 60px;
         display: flex;
         align-items: center;
         cursor: pointer;
-        font-size: 1.9vh;
+        font-family: 'NotoSansHans-Regular';
+        font-size: 20px;
         color: #1F4470;
 
         img {
-            width: 2vh;
-            height: auto;
-            margin-right: 1.5vh;
-            margin-left: 2.5vh;
+            width: 40px;
+            height: 40px;
+            margin-right: 14px;
+            margin-left: 28px;
         }
     }
 
     .navigation-child-sel {
         color: #FFFFFF;
-        background: linear-gradient(0deg, #3ACAFF, #2486FF);
+        background: linear-gradient(0deg, #2487FF, #3ACAFF);
+
+
+
     }
 }
 </style>
