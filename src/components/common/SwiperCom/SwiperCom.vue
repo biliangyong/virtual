@@ -21,7 +21,7 @@
                         'my-swiper-content',
                         { 'my-swiper-content-sel': index == swiperIndex },
                     ]">
-						<GlobalSmallTitle style="margin-top: 2vh;" :title="index + 1 < 10 ? `0${index + 1}` : `${index + 1}`" />
+						<GlobalSmallTitle style="margin-top: 30px;" :title="index + 1 < 10 ? `0${index + 1}` : `${index + 1}`" />
 						<el-image class="swiper-content-image" :src="item.cover_url" fit="cover" />
 						<div class="swiper-content-text">【{{ item.title }}】</div>
 					</div>
@@ -98,7 +98,7 @@
 		height: 360px;
 		position: absolute;
 		top: 134px;
-		left: 139px;
+		//left: 139px;
 
 		.operate-btn {
 			width: 60px;
@@ -133,18 +133,20 @@
 				flex-direction: column;
 				align-items: center;
 
+				//历史精神的图片
 				.swiper-content-image {
-					width: 16.7vh;
-					height: 16.7vh;
+					width: 160px;
+					height: 160px;
 					border-radius: 0.5vh;
-					margin-top: 2vh;
+					margin-top: 30px;
 				}
 
 				.swiper-content-text {
-					font-weight: bold;
-					font-size: 1.3vh;
+					font-family: 'NotoSansHans-Regular';
+					font-weight: normal;
+					font-size: 20px;
 					color: #1f4470;
-					margin-top: 2vh;
+					margin-top: 20px;
 				}
 			}
 

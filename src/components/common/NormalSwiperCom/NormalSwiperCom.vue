@@ -65,8 +65,8 @@ defineExpose({
 </script>
 <style lang="scss" scoped>
 .normal-swiper-com {
-	width: 100%;
-	height: 21.3vh;
+	width: 420px;
+	height: 230px;
 	overflow: hidden;
 
 	.swiper-slide {

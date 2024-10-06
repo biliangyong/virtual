@@ -16,7 +16,7 @@
         <!-- 点位详情页 -->
         <ContentCom :styleId="3" v-if="pointDetailsData" @closeBtnClick="pointDetailsData = null">
             <GlobalTitle :title="pointDetailsData.name" style="margin-top:32px;" />
-            <details-content :data="pointDetailsData" :htmlBool="true" style="padding: 2vh 0;box-sizing: border-box;" />
+            <details-content :data="pointDetailsData" :htmlBool="true" style="margin:30px;margin-top:24px;box-sizing: border-box;" />
         </ContentCom>
         <!-- 详情页 -->
         <ContentCom v-if="swiperContentData.length != 0" @closeBtnClick="clearData">
@@ -39,6 +39,7 @@
         </ContentCom>
         <!-- 卡通人物 -->
         <CartoonCom @sceneAnmClick="sceneAnmClick" />
+
         <!--<div class="quit-style">退出</div>-->
     </div>
 </template>

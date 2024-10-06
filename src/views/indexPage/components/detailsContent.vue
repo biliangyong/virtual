@@ -31,7 +31,7 @@ onUnmounted(() => {
 <style lang="scss">
 .details-content {
     position: relative;
-    width: 38.9vh;
+    width: 420px;
     height: 100%;
     overflow: hidden;
     overflow-y: scroll;
@@ -39,30 +39,31 @@ onUnmounted(() => {
     flex-direction: column;
 
     .school-icon {
-        width: 14.9vh;
-        height: 14.9vh;
+        width: 161px;
+        height: 160px;
         position: absolute;
-        bottom: 0;
-        left: 0;
+        bottom: 0px;
+        left: 0px;
+        z-index: -1;
     }
 
     .panorama-icon {
-        width: 3.1vh;
-        height: 3.1vh;
+        width: 34px;
+        height: 34px;
         position: absolute;
-        top: .6vh;
-        right: .6vh;
+        top: 6px;
+        right: 6px;
         z-index: 1;
         cursor: pointer;
     }
-
+//楼宇等
     .content-html {
         flex: 1;
         overflow: hidden;
         overflow-y: scroll;
+        font-family: 'NotoSansHans-Regular';
         font-weight: normal;
-        font-family: none;
-        font-size: 1.5vh;
+        font-size: 16px;
         color: #1F4470;
         line-height: 2.6vh;
     }

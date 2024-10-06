@@ -54,8 +54,11 @@ function closeBtnClick(){
 }
 
 .content-com-size3 {
-    height: 68.5vh;
-    width: 44.4vh;
+    height: 740px;
+    width: 480px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     background-image: url("./images/content-bg3.png");
 }
 
