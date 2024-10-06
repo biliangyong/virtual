@@ -11,18 +11,17 @@
         <img class="operate-btn"
             :src="require(`./images/operate-icon${(item.hover || item.showBool) ? (index + 's') : index}.png`)" alt=""
             v-for="(item, index) in operateData" :key="index" @mouseover="item.hover = true;"
-            @mouseleave="item.hover = false;" @click="operateBtnClick(item)">
+            @mouseleave="item.hover = false;" @click="operateBtnClick(item)"
+            :class="{ 'extra-spacing': index === 4 }"> <!-- 仅为博物馆按钮添加额外间距 -->
     </div>
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref, defineEmits, defineProps, watch } from "vue";//
+import { onMounted, onUnmounted, ref, defineEmits, defineProps, watch } from "vue";
 const props = defineProps({
     data: {
-        type: String,
-        default: () => {
-            return []
-        }
+        type: Array,
+        default: () => []
     }
 });
 const operateData = ref([]);
@@ -47,20 +46,24 @@ function operateBtnClick(itemData) {
     emits('operateBtnClick', itemData);
 }
 </script>
+
 <style lang="scss">
 .operate-com {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 50%;
-    right: 4vh;
-    transform: translateY(-50%);
+    position: absolute;
+    top: 114px;
+    right: 50px;
 
     .operate-btn {
-        width: 7.2vh;
-        height: 7.2vh;
+        width: 78px;
+        height: 78px;
         cursor: pointer;
-        margin-bottom: 1vh;
+        margin-bottom: 12px; // 默认间距
+    }
+
+    .extra-spacing {
+        margin-bottom: 36px; // 特殊间距
     }
 }
 </style>
