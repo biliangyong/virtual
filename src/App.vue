@@ -88,6 +88,12 @@ provide("PageJump", (url, outWeb = false) => {
   src: url('@/assets/fonts/Kingsoft_Cloud_Font.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'YouSheBiaoTiHei-2';
+  src: url('@/assets/fonts/YouSheBiaoTiHei-2.ttf') format('truetype');
+}
+
+
 .iframe-style {
   width: 100%;
   height: 100%;
