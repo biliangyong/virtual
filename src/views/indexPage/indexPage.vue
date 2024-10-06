@@ -84,9 +84,6 @@ onMounted(() => {
     bus.on('pointClickComplete', (pointData) => {
         console.log("点位数据",pointData);
         clearData();//清除旧数据
-        if (pointData.point_id === "Tl_S2761204F00859") {
-            pointData.index_code  = 3
-        }
         RequestScenicIdFun(pointData.index_code);
     });
    
