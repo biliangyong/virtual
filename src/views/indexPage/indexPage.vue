@@ -16,16 +16,19 @@
         <!-- 点位详情页 -->
         <ContentCom :styleId="3" v-if="pointDetailsData" @closeBtnClick="pointDetailsData = null">
             <GlobalTitle :title="pointDetailsData.name" style="margin-top:3vh;" />
+            <GlobalTitle :title="pointDetailsData.name" style="margin-top:32px;" />
             <details-content :data="pointDetailsData" :htmlBool="true" style="padding: 2vh 0;box-sizing: border-box;" />
         </ContentCom>
         <!-- 详情页 -->
         <ContentCom v-if="swiperContentData.length != 0" @closeBtnClick="clearData">
             <GlobalTitle :title="theOperateData.type" style="margin-top:3vh;" />
+            <GlobalTitle :title="theOperateData.type" style="margin-top:32px;" />
             <SwiperCom :data="swiperContentData" @swiperSlideClick="swiperSlideClick" />
         </ContentCom>
         <!-- 轮播图页面 -->
         <ContentCom v-if="detailsContentData" @closeBtnClick="detailsContentData = null;">
             <GlobalTitle :title="detailsContentData.title" style="margin-top:3vh;" />
+            <GlobalTitle :title="detailsContentData.title" style="margin-top:32px;" />
             <schoolContent :data="detailsContentData" />
         </ContentCom>
         <!-- 码上带走、操作引导、虚拟博物馆 -->
@@ -34,6 +37,7 @@
             @closeBtnClick="theOperateData = null;">
             <template v-if="theOperateData.type == '虚拟博物馆'">
                 <GlobalTitle :title="theOperateData.type" style="margin-top:3vh;" />
+                <GlobalTitle :title="theOperateData.type" style="margin-top:32px;" />
                 <museumContent />
             </template>
         </ContentCom>
@@ -41,6 +45,7 @@
         <CartoonCom @sceneAnmClick="sceneAnmClick" />
 
         <div class="quit-style">退出</div>
+        <!--<div class="quit-style">退出</div>-->
     </div>
 </template>
 <script setup>
