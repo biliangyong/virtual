@@ -23,7 +23,7 @@
                 <template #dropdown>
                     <div class="app-menu-view">
                         <div class="app-menu-view-child" v-for="(item, index) in campusGroup" :key="index"
-                            @click="theCampusIndex = index">{{ item }}</div>
+                            @click="theCampusIndex = index;switchLoc(theCampusIndex)">{{ item }}</div>
                     </div>
                 </template>
             </el-dropdown>
@@ -41,16 +41,55 @@
 
 <script setup>
 import { CaretBottom } from '@element-plus/icons-vue'
-import { onMounted, onUnmounted, ref } from "vue";
+import { onMounted, onUnmounted, ref,inject } from "vue";
 import { getTime, getTimeChinese, getDayOfWeek } from "@/utils/getTime";
-const theCampusIndex = ref(0);
 
-const campusGroup = ref(["东校区", "西校区"]);
+import { setGlobalVariable } from '../../../../gloablState';
+
+
+
+const theCampusIndex = ref(0);
+let mapDom = inject("mapDom");
+const campusGroup = ref(["西校区", "东校区"]);
 var yearMonthDay = ref('00年00月00天')//年月日时间
 var hours = ref('00')//小时
 var minutes = ref('00')//分钟
 var seconds = ref('00')//秒
 var DayOfWeek = ref('星期一')
+
+
+//切换东区西区视角同时给全局变量赋值
+function switchLoc(theCampusIndex1){
+    //alert(theCampusIndex1);
+    setGlobalVariable(theCampusIndex1);
+    
+
+
+    let viewId = "";//视角id
+    let type = { typeDatas: [] };//类型数据
+    
+    if (theCampusIndex1===0)
+{
+        //楼宇
+        viewId = "3056";
+        type.typeDatas = ["1200"];
+        //alert('0');
+    }   
+    else{
+        //楼宇
+        viewId = "3098";
+        type.typeDatas = [""];
+        //alert('1')
+    }   
+    
+    
+    //切换场景视角
+    if (viewId) mapDom.value.callAction("switchSceneView", viewId)
+    {mapDom.value.callAction("toggleTypePointVisibility", JSON.stringify(type));}
+}
+
+
+
 
 
 let setInTime//定义时间定时器
