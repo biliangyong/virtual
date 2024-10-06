@@ -72,10 +72,12 @@ function start(socketUrl, key, secret) {
   socket.value.on("pointClickComplete", (data) => {
     const pointData = JSON.parse(data);
     callAction("switchPointView", pointData.index_code);//切换点位视角
+  });
+  //监听点位视角到达
+  socket.value.on("pointViewComplete", (data) => {
+    const pointData = JSON.parse(data);
     bus.emit("pointClickComplete", pointData);
   });
-
-
 }
 
 function emitStart() {
