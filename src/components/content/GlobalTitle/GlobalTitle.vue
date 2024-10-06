@@ -29,12 +29,13 @@ onUnmounted(() => {
 </script>
 <style lang="scss">
 .global-title {
-    height: 3vh;
+    height: 32px;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(122, 211, 255, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
-    font-size: 1.6vh;
+    font-size: 24px;
+    font-family: 'YouSheBiaoTiHei-2';
     color: #1F4470;
     text-align: center;
-    line-height: 3.5vh;
+    line-height: 32px;
     box-sizing: border-box;
     padding: 0 3vh;
     position: relative;
