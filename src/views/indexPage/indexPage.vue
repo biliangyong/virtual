@@ -49,7 +49,8 @@ import detailsContent from './components/detailsContent.vue';
 import schoolContent from './components/schoolContent.vue';
 import museumContent from './components/museumContent.vue';
 import { RequestIntroductionList, RequestIntroductionType, RequestIntroductionId, RequestScenicId } from "@/network/PageRequest.js"
-
+import { globalState } from '../../../gloablState';//使用全局变量记录当前是东区还是西区
+import { setGlobalIndex } from '../../../gloablState';
 let mapDom = inject("mapDom");
 const operateData = ref([
     { type: "校园概况" },
@@ -83,9 +84,10 @@ onMounted(() => {
     bus.on('pointClickComplete', (pointData) => {
         console.log("点位数据",pointData);
         clearData();//清除旧数据
-        RequestScenicIdFun(pointData.index_code);
-    });
-   
+        setTimeout(() => {
+            RequestScenicIdFun(pointData.index_code);
+        }, 2500);
+    })
 });
 
 //场景漫游点击
@@ -95,11 +97,16 @@ function sceneAnmClick(){
 }
 
 function navigationClick(index) {
+    
+
     console.log(index);
     let viewId = "";//视角id
     let type = { typeDatas: [] };//类型数据
+    if(globalState.globalVariable===0){
+        console.log("西区");
     if (index === 0) {
         //楼宇
+        
         viewId = "3056";
         type.typeDatas = ["1200"];
     }
@@ -128,7 +135,47 @@ function navigationClick(index) {
         viewId = "3061";
         type.typeDatas = ["1205"];
     }
+    }
+    else{
+        console.log("当前东区")
+        if (index === 0) {
+        //楼宇
+        viewId = "3098";
+        type.typeDatas = ["1200"];
+        
+        
+        
+    }   
+    else if (index === 1) {
+        //道路
+        viewId = "3099";
+        type.typeDatas = ["1201"];
 
+    }
+    else if (index === 2) {
+        //景观
+        viewId = "3100";
+        type.typeDatas = ["1202"];
+    }
+    else if (index === 3) {
+        //文化景点
+        viewId = "3101";
+        type.typeDatas = ["1203"];
+    }
+    else if (index === 4) {
+        //寝室楼
+        viewId = "3102";
+        type.typeDatas = ["1204"];
+    }
+    else if (index === 5) {
+        //校园餐厅
+        viewId = "3103";
+        type.typeDatas = ["1204"];
+    }
+    }
+
+
+    setGlobalIndex(viewId);//将当前视角保存到全局变量中以方便返回至此视角
     //切换场景视角
     if (viewId) mapDom.value.callAction("switchSceneView", viewId)
     mapDom.value.callAction("toggleTypePointVisibility", JSON.stringify(type));
