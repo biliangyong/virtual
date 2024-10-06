@@ -18,37 +18,39 @@ function sceneAnmClick(){
 </script>
 <style lang="scss">
 .cartoon-com {
-    width: 32vh;
-    height: 23.5vh;
+    width: 346px;
+    height: 254px;
     background-image: url("./images/cartoon-icon.png");
     background-size: 100% 100%;
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: 0px;
+    bottom: 0px;
     cursor: pointer;
 
     .talk-style {
-        width: 26.8vh;
-        height: 12.4vh;
+        width: 290px;
+        height: 134px;
         background-image: url("./images/talk-background.png");
         background-size: 100% 100%;
         position: absolute;
-        top: 1vh;
-        right: -6vh;
-        transform: translate(-100%, -100%);
-        font-size: 1.5vh;
+        bottom: 240px;
+        right: 240px;
+        font-family: 'NotoSansHans-Regular';
+        font-size: 16px;
         color: #1F4470;
         line-height: 2.2vh;
-        font-family: none;
-        padding: 2.3vh;
+        padding: 18px;
+        padding-top: 24px;
+        padding-bottom: 42px;
         box-sizing: border-box;
 
+        //可能要改
         img {
-            width: 7vh;
-            height: 1.6vh;
+            width: 76px;
+            height: 17px;
             position: absolute;
-            bottom: 3.8vh;
-            right: 1.9vh;
+            bottom: 42px;
+            right: 18px;
             cursor: pointer;
 
         }
