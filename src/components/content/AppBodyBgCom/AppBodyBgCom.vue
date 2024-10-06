@@ -17,7 +17,7 @@
                 <span class="el-dropdown-link">
                     {{ campusGroup[theCampusIndex] }}
                     <el-icon class="el-icon--right">
-                        <arrow-down />
+                        <caret-bottom />
                     </el-icon>
                 </span>
                 <template #dropdown>
@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-import { ArrowDown } from '@element-plus/icons-vue'
+import { CaretBottom } from '@element-plus/icons-vue'
 import { onMounted, onUnmounted, ref } from "vue";
 import { getTime, getTimeChinese, getDayOfWeek } from "@/utils/getTime";
 const theCampusIndex = ref(0);
@@ -76,17 +76,20 @@ onUnmounted(() => {
 .el-dropdown-link {
     display: flex;
     align-items: center;
-    font-weight: bold;
-    font-size: 2vh;
+    font-weight: normal;
+    font-size: 30px;
+    font-family: 'YouSheBiaoTiHei-2';
     color: #1F4470;
 }
 
 .el-scrollbar .app-menu-view {
-    width: 9vh;
+    width: 100px;
+    height: 90px;
     padding: 0.5vh 0;
 
     .app-menu-view-child {
-        line-height: 3vh;
+        line-height: 45px;
+        font-family: 'NotoSansHans-Regular';
         font-size: 1.5vh;
         color: #1F4470;
         text-align: center;
@@ -100,6 +103,8 @@ onUnmounted(() => {
 }
 
 .app-top {
+    width: 100;
+    height: 87px;
     position: relative;
     top: 0;
     left: 0;
@@ -109,31 +114,34 @@ onUnmounted(() => {
     }
 
     .app-title {
-        font-weight: bold;
-        font-size: 3.1vh;
+        font-weight: normal;
+        font-size: 47.5px;
+        font-family: 'YouSheBiaoTiHei-2';
         color: #1F4470;
         position: absolute;
-        top: 2.2vh;
-        left: 5vh;
+        top: 22px;
+        left: 66px;
+        line-height: 33px;
     }
 
     .app-menu {
         position: absolute;
-        left: 48.5vh;
-        top: 1.8vh;
+        left: 509.2px;
+        top: 14px;
     }
 
     .top-information {
         display: flex;
         justify-content: space-between;
         position: absolute;
-        top: 2vh;
-        right: 2vh;
-
+        top: 22px;
+        right: 28px;
         span {
-            font-size: 1.4vh;
-            font-weight: bold;
+            font-family: 'YouSheBiaoTiHei-2';
+            font-size: 22px;
+            font-weight: normal;
             color: #1F4470;
+            line-height: 17px;
         }
     }
 }
