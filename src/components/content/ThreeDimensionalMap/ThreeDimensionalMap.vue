@@ -74,6 +74,8 @@ function start(socketUrl, key, secret) {
     callAction("switchPointView", pointData.index_code);//切换点位视角
     bus.emit("pointClickComplete", pointData);
   });
+
+
 }
 
 function emitStart() {
