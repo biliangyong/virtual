@@ -67,7 +67,7 @@ function start(socketUrl, key, secret) {
     var pointGroup = JSON.parse(data);
     console.log("接受场景中的点位数据",pointGroup);
   });
-
+  
   //监听标签点击
   socket.value.on("pointClickComplete", (data) => {
     const pointData = JSON.parse(data);
