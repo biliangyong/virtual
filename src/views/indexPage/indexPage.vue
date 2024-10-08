@@ -89,10 +89,28 @@ onMounted(() => {
     })
 });
 
+let clickCount = 0;
 //场景漫游点击
 function sceneAnmClick(){
-    let anmData = {roamId:"76",IsLoop:"0"};
-    mapDom.value.callAction("activateRoam", JSON.stringify(anmData));
+    clickCount++;
+    if (clickCount % 2 === 1) {
+        let anmData;
+        if(globalState.globalVariable){
+            anmData={roamId:"152",IsLoop:"0"};
+            mapDom.value.callAction("displayEffect", "230" );
+        }else {
+            anmData = {roamId:"150",IsLoop:"0"};
+            mapDom.value.callAction("displayEffect", "175" );
+        }
+        mapDom.value.callAction("activateRoam", JSON.stringify(anmData));
+    } else if (clickCount % 2 === 0) {
+        if(globalState.globalVariable){
+            mapDom.value.callAction("hideEffect", "230" );
+        }else {
+            mapDom.value.callAction("hideEffect", "175" );
+        }
+        mapDom.value.callAction("deactivateRoam");
+    }
 }
 
 function navigationClick(index) {
