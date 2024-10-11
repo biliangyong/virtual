@@ -113,9 +113,10 @@ function sceneAnmClick(){
     }
 }
 
+//导航点击
 function navigationClick(index) {
     
-
+    
     console.log(index);
     let viewId = "";//视角id
     let type = { typeDatas: [] };//类型数据
